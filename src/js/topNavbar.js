@@ -1,19 +1,42 @@
-function loadTopNavbar(){
-    const content = document.createElement('div');
+function createNavbar(){
     const navbar = document.createElement('nav');
+    navbar.setAttribute("class", "navbar fixed-top navbar-dark bg-secondary");
+     return navbar;
+}
+
+function createContainer(){
     const container = document.createElement('div');
+    container.setAttribute("class", "d-flex justify-content-between flex-row-reverse container-fluid px-3 py-3 container-xxl");
+
+    return container;
+}
+
+function createBrandSpan(brandText){
+    const brandSpan = document.createElement('span');
+    brandSpan.setAttribute("class", "fw-bold primary");
+
+    brandSpan.textContent = brandText;
+
+    return brandSpan;
+}
+
+function createBrand(anchor){
     const brand = document.createElement('a');
     brand.setAttribute("href", "#");
-    brand.textContent = "Navbar";
-    content.setAttribute("class", "container-fluid m-0 p-0");
-    navbar.setAttribute("class", "navbar navbar-dark bg-dark");
-    container.setAttribute("class", "container-fluid navbar-dark px-5 border-3");
     brand.setAttribute("class", "navbar-brand");
 
-    content.appendChild(navbar);
+    return brand;
+}
+function loadTopNavbar(){
+    const navbar = createNavbar();
+    const container = createContainer();
+    const brandSpan = createBrandSpan("TODO List: PRO");
+    const brand = createBrand("#");
+
     navbar.appendChild(container);
     container.appendChild(brand);
+    brand.appendChild(brandSpan);
 
-    return content;
+    return navbar;
 }
 export default loadTopNavbar;
