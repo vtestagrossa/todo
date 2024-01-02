@@ -2,7 +2,7 @@ import '../scss/styles.scss';   //  this is needed for style-loader to inject th
                                 //  style tag. All styling can now be handled within
                                 //  the js modules.
 import 'bootstrap';             //  needed for bootstrap's js.
-import loadTopNavbar from "./topNavbar.js";
+import loadLayout from './layout';
 /**
  * 
  * TODO:
@@ -13,7 +13,7 @@ import loadTopNavbar from "./topNavbar.js";
  */
 
 function renderWebpage() {
-    const topNavbar = loadTopNavbar();
-    document.body.appendChild(topNavbar);
+    const layout = loadLayout();
+    document.body.appendChild(layout);
 }
 renderWebpage();

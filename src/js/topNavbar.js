@@ -1,6 +1,6 @@
 function createNavbar(){
     const navbar = document.createElement('nav');
-    navbar.setAttribute("class", "navbar navbar-expand-xlg fixed-top navbar-dark bg-secondary");
+    navbar.setAttribute("class", "navbar navbar-expand-m navbar-dark bg-secondary");
 
      return navbar;
 }
@@ -23,7 +23,7 @@ function createToggler(){
 }
 function createContainer(){
     const container = document.createElement('div');
-    container.setAttribute("class", "d-flex justify-content-between flex-row-reverse container-fluid px-3 py-3 container-xxl");
+    container.setAttribute("class", "d-flex justify-content-between flex-row-reverse container-fluid px-3 py-3 container-fluid");
 
     return container;
 }
@@ -39,7 +39,7 @@ function createBrandSpan(brandText){
 
 function createBrand(anchor){
     const brand = document.createElement('a');
-    brand.setAttribute("href", "#");
+    brand.setAttribute("href", "#" + anchor);
     brand.setAttribute("class", "navbar-brand");
 
     return brand;
@@ -48,15 +48,13 @@ function loadTopNavbar(){
     const navbar = createNavbar();
     const container = createContainer();
     const brandSpan = createBrandSpan("TODO List: PRO");
-    const brand = createBrand("#");
+    const brand = createBrand("");
     const toggler = createToggler();
-    const linkContainer = createNavbarLinks();
 
     navbar.appendChild(container);
 
     container.appendChild(brand);
     container.appendChild(toggler);
-    container.appendChild(linkContainer);
 
     brand.appendChild(brandSpan);
 

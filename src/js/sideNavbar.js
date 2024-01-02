@@ -1,10 +1,16 @@
 //TODO: Need to refactor this into multiple functions and export the module
+function createItem(){
+
+}
+function createLink(){
+    
+}
 function createNavbarLinks(){
     const linkContainer = document.createElement('div');
     const uList = document.createElement('ul');
 
     linkContainer.setAttribute("class",
-    "collapse navbar-collapse"
+    "collapse navbar-collapse bg-dark text-light"
     );
     linkContainer.setAttribute("id", "top-nav");
 
@@ -55,3 +61,5 @@ function createNavbarLinks(){
 
     return linkContainer;
 }
+
+export default createNavbarLinks;
