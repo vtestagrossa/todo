@@ -1,7 +1,7 @@
 import '../scss/styles.scss';   //  this is needed for style-loader to inject the
                                 //  style tag. All styling can now be handled within
                                 //  the js modules.
-
+import 'bootstrap';             //  needed for bootstrap's js.
 import loadTopNavbar from "./topNavbar.js";
 /**
  * 
