@@ -1,63 +1,69 @@
-//TODO: Need to refactor this into multiple functions and export the module
-function createItem(){
+/**
+ * TODO: make this stay open if the page is large or bigger.
+ */
+function createHeader(title){
+    const header = document.createElement('div');
+    const headerTitle = document.createElement('h5');
+    const closeButton = document.createElement('button');
 
+    header.setAttribute("class", "offcanvas-header");
+    headerTitle.setAttribute("class", "offcanvas-title fw-bold");
+    headerTitle.textContent = title;
+    closeButton.setAttribute("class", "btn-close btn-close-white");
+    closeButton.setAttribute("type", "button");
+    closeButton.setAttribute("data-bs-target", "#top-nav");
+    closeButton.setAttribute("data-bs-dismiss", "offcanvas");
+    closeButton.setAttribute("aria-label", "close");
+
+    header.appendChild(headerTitle);
+    header.appendChild(closeButton);
+
+    return header;
 }
-function createLink(){
-    
+function createLink(href, description){
+    const ocItem = document.createElement('li');
+    const ocLink = document.createElement('a');
+
+    ocItem.setAttribute("class", "nav-item");
+    ocLink.setAttribute("class", "nav-link");
+    ocLink.setAttribute("href", href);
+    ocLink.textContent = description;
+
+    ocItem.appendChild(ocLink);
+
+    return ocItem;
 }
 function createNavbarLinks(){
+    const title = "Project View";
     const linkContainer = document.createElement('div');
+    const breakpointTitle = document.createElement('h5');
+    const body = document.createElement('div');
+    const header = createHeader(title);
     const uList = document.createElement('ul');
 
-    linkContainer.setAttribute("class",
-    "collapse navbar-collapse bg-dark text-light"
-    );
+    body.setAttribute("class", "offcanvas-body vh-100 vw-10");
+
+    linkContainer.setAttribute("class", "offcanvas-lg offcanvas-start bg-secondary text-light");
     linkContainer.setAttribute("id", "top-nav");
+    linkContainer.setAttribute("tabindex", "-1");
 
-    uList.setAttribute("class", "navbar-nav me-auto mb-2 mb-lg-0");
+    uList.setAttribute("class", "navbar-nav justify-content-start flex-grow-1 pe-3 mx-3");
 
-    //TODO: Factor these out into a function so DRY
-    const item1 = document.createElement('li');
-    const link1 = document.createElement('a');
-    const item2 = document.createElement('li');
-    const link2 = document.createElement('a');
-    const item3 = document.createElement('li');
-    const link3 = document.createElement('a');
-    const item4 = document.createElement('li');
-    const link4 = document.createElement('a');
+    breakpointTitle.setAttribute("class", "offcanvas-title fw-bold d-none d-lg-block");
+    breakpointTitle.textContent = title;
 
+    const firstItem = createLink("#", "Home");
+    const secondItem = createLink("#", "New Project");
+    const thirdItem = createLink("#", "New List");
 
-    item1.setAttribute("class", "nav-item");
-    item2.setAttribute("class", "nav-item");
-    item3.setAttribute("class", "nav-item");
-    item4.setAttribute("class", "nav-item");
+    uList.appendChild(breakpointTitle);
+    uList.appendChild(firstItem);
+    uList.appendChild(secondItem);
+    uList.appendChild(thirdItem);
 
-    link1.setAttribute("class", "nav-link");
-    link2.setAttribute("class", "nav-link");
-    link3.setAttribute("class", "nav-link active");
-    link4.setAttribute("class", "nav-link");
-
-    link1.setAttribute("href", "#");
-    link2.setAttribute("href", "#");
-    link3.setAttribute("href", "#");
-    link4.setAttribute("href", "#");
-
-    link1.textContent = "Add List"
-    link2.textContent = "Add Group"
-    link3.textContent = "Home"
-    link4.textContent = "Other"
-
-    item1.appendChild(link1);
-    item2.appendChild(link2);
-    item3.appendChild(link3);
-    item4.appendChild(link4);
-
-    uList.appendChild(item1);
-    uList.appendChild(item2);
-    uList.appendChild(item3);
-    uList.appendChild(item4);
-
-    linkContainer.appendChild(uList);
+    body.appendChild(uList);
+    linkContainer.appendChild(header);
+    linkContainer.appendChild(body);
 
     return linkContainer;
 }

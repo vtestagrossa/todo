@@ -1,6 +1,6 @@
 function createNavbar(){
     const navbar = document.createElement('nav');
-    navbar.setAttribute("class", "navbar navbar-expand-m navbar-dark bg-secondary");
+    navbar.setAttribute("class", "navbar navbar-expand-lg navbar-dark bg-secondary");
 
      return navbar;
 }
@@ -8,9 +8,9 @@ function createToggler(){
     const toggler = document.createElement('button');
     const toggleIcon = document.createElement('span');
 
-    toggler.setAttribute("class", "navbar-toggler");
+    toggler.setAttribute("class", "navbar-toggler d-lg-none");
     toggler.setAttribute("type", "button");
-    toggler.setAttribute("data-bs-toggle", "collapse");
+    toggler.setAttribute("data-bs-toggle", "offcanvas");
     toggler.setAttribute("data-bs-target", "#top-nav");
     toggler.setAttribute("aria-controls", "top-nav");
     toggler.setAttribute("aria-expanded", "false");
