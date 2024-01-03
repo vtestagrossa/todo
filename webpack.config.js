@@ -6,7 +6,7 @@ const autoprefixer = require('autoprefixer');
 
 module.exports = {
     mode: 'development',
-    entry: ['./src/js/main.js', './src/js/topNavbar.js'],
+    entry: ['./src/js/main.js'],
     output: {
         filename: 'main.js',
         path: path.resolve(__dirname, 'dist'),

@@ -2,18 +2,16 @@ import '../scss/styles.scss';   //  this is needed for style-loader to inject th
                                 //  style tag. All styling can now be handled within
                                 //  the js modules.
 import 'bootstrap';             //  needed for bootstrap's js.
-import loadLayout from './layout';
-/**
- * 
- * TODO:
- * 
- * Make a control panel that collapses into a hamburger menu
- * Make a default project and todo listing
- * Make a main content area that uses a grid and shows the todo lists
- */
 
 function renderWebpage() {
-    const layout = loadLayout();
-    document.body.appendChild(layout);
+    const initTest = document.createElement('div');
+
+    initTest.setAttribute("class", 
+        "container-fluid bg-primary text-light h1 d-flex justify-content-center " +
+        "py-5"
+    );
+    initTest.textContent = "Hello Bootstrap, Webpack, and JavaScript!";
+
+    document.body.appendChild(initTest);
 }
 renderWebpage();
