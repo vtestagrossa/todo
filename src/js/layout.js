@@ -1,5 +1,5 @@
 import loadTopNavbar from "./topNavbar";
-import createNavbarLinks from "./sideNavbar";
+import createOffcanvas from "./offcanvas";
 
 function createContainer(){
     const content = document.createElement('div');
@@ -29,22 +29,17 @@ function loadLayout(){
     navbarColumn.appendChild(loadTopNavbar());
 
     const contentRow = createRow();
-    const toolbarColumn = createColumn();
-    toolbarColumn.classList.add("col-sm-2");
-    toolbarColumn.classList.add("col-12");
-    toolbarColumn.appendChild(createNavbarLinks());
-    contentRow.appendChild(toolbarColumn);
+    const offcanvasColumn = createColumn();
+    offcanvasColumn.classList.add("col-sm-2");
+    offcanvasColumn.classList.add("col-12");
+    offcanvasColumn.appendChild(createOffcanvas());
+    contentRow.appendChild(offcanvasColumn);
 
     const contentColumn = createColumn();
     contentColumn.classList.add("col-sm-10");
     contentColumn.classList.add("col-12");
-    /* 
-    contentColumn.classList.add("bg-primary");
-    contentColumn.classList.add("content-fluid");
-    contentColumn.textContent = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio error consequatur labore rerum recusandae voluptatem doloribus itaque asperiores in dicta. Eius vel distinctio in fuga similique aut quisquam tempore corporis consequatur, provident ratione laboriosam suscipit animi assumenda beatae dolorum corrupti laudantium earum tempora? Voluptate consequuntur iure animi eveniet nemo accusamus." 
-    */
+    
     contentRow.appendChild(contentColumn);
-
     content.appendChild(navbarRow);
     content.appendChild(contentRow);
 

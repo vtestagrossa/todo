@@ -1,6 +1,8 @@
 function createNavbar(){
     const navbar = document.createElement('nav');
-    navbar.setAttribute("class", "navbar navbar-expand-lg navbar-dark bg-secondary");
+    navbar.setAttribute("class", 
+        "navbar navbar-expand-lg navbar-dark bg-secondary"
+    );
 
      return navbar;
 }
@@ -23,7 +25,10 @@ function createToggler(){
 }
 function createContainer(){
     const container = document.createElement('div');
-    container.setAttribute("class", "d-flex justify-content-between flex-row-reverse container-fluid px-3 py-3 container-fluid");
+    container.setAttribute("class", 
+        "d-flex justify-content-between flex-row-reverse container-fluid" +
+        "px-3 py-3 container-fluid"
+    );
 
     return container;
 }

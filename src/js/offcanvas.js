@@ -25,7 +25,7 @@ function createLink(href, description){
     const ocLink = document.createElement('a');
 
     ocItem.setAttribute("class", "nav-item");
-    ocLink.setAttribute("class", "nav-link");
+    ocLink.setAttribute("class", "btn btn-outline-light w-100 mx-1 my-1");
     ocLink.setAttribute("href", href);
     ocLink.textContent = description;
 
@@ -33,23 +33,27 @@ function createLink(href, description){
 
     return ocItem;
 }
-function createNavbarLinks(){
+function createOffcanvas(){
     const title = "Project View";
     const linkContainer = document.createElement('div');
-    const breakpointTitle = document.createElement('h5');
+    const breakpointTitle = document.createElement('h4');
     const body = document.createElement('div');
     const header = createHeader(title);
     const uList = document.createElement('ul');
 
     body.setAttribute("class", "offcanvas-body vh-100 vw-10");
 
-    linkContainer.setAttribute("class", "offcanvas-lg offcanvas-start bg-secondary text-light");
+    linkContainer.setAttribute("class", 
+        "offcanvas-lg offcanvas-start bg-secondary text-light"
+    );
     linkContainer.setAttribute("id", "top-nav");
     linkContainer.setAttribute("tabindex", "-1");
 
     uList.setAttribute("class", "navbar-nav justify-content-start flex-grow-1 pe-3 mx-3");
 
-    breakpointTitle.setAttribute("class", "offcanvas-title fw-bold d-none d-lg-block");
+    breakpointTitle.setAttribute("class", 
+        "offcanvas-title fw-bold d-none d-lg-block my-2 border-bottom border-2 py-2"
+    );
     breakpointTitle.textContent = title;
 
     const firstItem = createLink("#", "Home");
@@ -68,4 +72,4 @@ function createNavbarLinks(){
     return linkContainer;
 }
 
-export default createNavbarLinks;
+export default createOffcanvas;
